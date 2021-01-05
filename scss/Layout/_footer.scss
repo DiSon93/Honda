@@ -1,0 +1,240 @@
+footer {
+    background-color: #007cc0;
+    color: white;
+    .footer_content {
+        padding: 30px;
+    }
+    .footer_text {
+        font-size: 1.2rem;
+        a {
+            color: white;
+            font-weight: bold;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        .footer_left {
+            line-height: 1.5rem;
+        }
+        .footer_right {
+            text-align: right;
+            letter-spacing: 1px;
+            p a {
+                font-weight: lighter;
+                &::after {
+                    content: "";
+                    padding: 0 3px;
+                    margin: 0 5px;
+                    border-left: 1px solid white;
+                }
+            }
+            p a:last-child {
+                &::after {
+                    border: 0;
+                }
+            }
+            p {
+                margin: 5px 0;
+                line-height: 1.8rem;
+            }
+        }
+    }
+    .footer_logo {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        justify-content: space-between;
+        align-items: center;
+        padding: 35px 0;
+        .logo_item {
+            width: 100%;
+            color: white;
+            background-color: #007cc0;
+            text-align: center;
+            p {
+                color: white;
+            }
+        }
+        .logo1 {
+            padding-left: 15px;
+            text-align: left;
+            img:first-child {
+                margin-left: 15px;
+                height: 32px;
+                width: 32px;
+            }
+            .logo_img1 {
+                display: block;
+                margin-top: -28px;
+            }
+        }
+        .logo2 {
+            font-weight: bold;
+            font-size: 1.8rem;
+            img {
+                width: 25px;
+                height: 25px;
+                margin-left: 5px;
+            }
+        }
+        .logo3 {
+            img {
+                width: 75px;
+                height: 64px;
+            }
+        }
+        .logo4 {
+            img {
+                width: 80px;
+            }
+            p {
+                margin-top: -30px;
+                font-size: 1rem;
+                font-weight: bold;
+            }
+        }
+        .logo5 {
+            text-align: center;
+            img {
+                height: 64px;
+                width: 64px;
+            }
+        }
+        .logo6 {
+            img {
+                width: 80px;
+            }
+            p {
+                font-size: 1rem;
+                margin-top: -30px;
+            }
+        }
+        .logo7 {
+            img {
+                width: 100px;
+            }
+        }
+        .logo8 {
+            img {
+                width: 128px;
+            }
+        }
+    }
+    .footer_end {
+        p {
+            line-height: 1.8rem;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            a {
+                color: white;
+            }
+        }
+    }
+}
+#button {
+    display: inline-block;
+    background-color: #007cc0;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 3rem;
+    text-align: center;
+    border-radius: 8px 0 0 8px;
+    position: fixed;
+    bottom: 30px;
+    right: 0;
+    transition: all 0.5s ;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    color: white;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.35);
+    i{
+        border-top: 3px solid white;
+        line-height: 1.6rem;
+    }
+}
+
+#button.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cd-top--fade-out {
+    // reduce button opacity if user keeps scrolling
+    opacity: 0.5;
+}
+
+// REPONSIVE
+#footer {
+    @include responsive("medium") {
+        .footer_text {
+            text-align: center;
+            font-size: 1rem;
+            .footer_right {
+                text-align: center;
+                font-size: 1.2rem;
+            }
+        }
+        .footer_logo {
+            display: block;
+            .logo_item {
+                display: none;
+            }
+            .logo1 {
+                display: block;
+                text-align: center;
+                padding-left: 45%;
+                margin-top: 30px;
+                img {
+                    display: block;
+                }
+            }
+        }
+        .footer_end {
+            text-align: center;
+            p {
+                font-size: 1rem;
+                letter-spacing: 0.4px;
+            }
+        }
+        .footer_content {
+            padding: 15px;
+        }
+    }
+    @include responsiveMin("medium") {
+        .logo3 {
+            img {
+                height: 55px;
+            }
+        }
+        .logo1 {
+            padding: 0;
+        }
+        .logo4 {
+            img {
+                width: 78px;
+            }
+            p {
+                font-size: 0.8rem;
+                letter-spacing: 0.2px;
+                margin-top: -35px;
+            }
+        }
+        .logo5 {
+            img {
+                height: 55px;
+            }
+        }
+        .logo6 {
+            img {
+                width: 78px;
+            }
+            p {
+                margin-top: -35px;
+            }
+        }
+        .footer_logo {
+            padding: 30px 0;
+        }
+    }
+}

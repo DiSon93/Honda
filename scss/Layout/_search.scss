@@ -1,0 +1,19 @@
+.search{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #F5F5F5;
+    margin-top: 0;
+    .search__items{
+        width: 23%;
+        text-align: center;
+        background-color: $color-white-0;
+        margin-top: 30px;
+        @include styleText($color-black-0,$fs-0 + 1,$fw-bold-1);
+        i{
+            font-size: 60px;
+            padding-top: 30px;
+        }
+
+    }
+}

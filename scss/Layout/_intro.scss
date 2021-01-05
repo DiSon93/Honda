@@ -1,0 +1,82 @@
+.intro{
+    // position: relative;
+    @include background('/img/Background.jpg');
+    height: 400px;
+    background-size: cover;
+    display: flex;
+    .intro__all{
+        display: flex;
+        width: 94%;
+        margin: 0 auto;
+        justify-content: space-around;
+        .intro__content{
+            position: relative;
+           
+            margin-top: 70px;
+            width: 48%;
+            img{
+                width: 100%!important;
+                height: 330px;
+            }
+            .intro__quote{
+                position: absolute;
+                bottom: 40px;
+                text-align: center;
+                left: 50%;
+                transform: translateX(-50%);
+                // line-height: 40px;
+                h3{
+                    @include styleText($color-white-0,$fs-2 - 2px,$fw-bold-1);
+                }
+
+               
+            }
+            .quote__last{
+                position: absolute;
+                width: 40%;
+                text-align: left;
+                
+                left: 40px;
+                top: 50%;
+                transform: translateY(-50%);
+                h3{
+                    @include styleText($color-white-0,$fs-2 - 2px,$fw-bold-1);
+                
+                }
+
+            }
+           
+        }
+        
+    }
+ 
+   
+    
+}
+@include responsive('medium'){
+    .intro{
+        display: none;
+    }
+}
+@include responsive('large'){
+    .intro h3{
+       font-size: $fs-2 - 10px!important;
+    }
+    .intro__btn{
+        font-size: $fs-0 - 3px!important;
+     }
+     .intro__quote,.quote__last{
+         width: 100%;
+     }
+     .quote__last{
+        width: 80%!important;
+     }
+}
+@include responsive('extra-large'){
+    .intro h3{
+       font-size: $fs-2 - 6px!important;
+    }
+    .intro__btn{
+        font-size: $fs-0 - 5px!important;
+     }
+}
